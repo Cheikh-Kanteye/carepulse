@@ -1,0 +1,451 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+p {
+  color: #abb8c4;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #24ae7c;
+  border-radius: 8px;
+  visibility: visible;
+}
+
+::-webkit-scrollbar-corner {
+  background: #24ae7c10; /* Couleur de fond du coin */
+}
+
+@supports (scrollbar-color: #24ae7c #24ae7c10) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #24ae7c #24ae7c10;
+  }
+}
+
+.input-container:has(input:focus),
+textarea:focus,
+select:focus {
+  -webkit-box-shadow: -1px 0px 10px 1px rgba(36, 174, 124, 0.67);
+  -moz-box-shadow: -1px 0px 10px 1px rgba(36, 174, 124, 0.67);
+  box-shadow: -1px 0px 10px 1px rgba(36, 174, 124, 0.67);
+}
+
+input[type="radio"] {
+  opacity: 0;
+  /* -webkit-appearance: none; */
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 15px);
+  cursor: pointer;
+}
+
+.bullet {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  left: -3px;
+  top: 2px;
+  border: 5px solid #24ae7c;
+  opacity: 0;
+  border-radius: 50%;
+}
+
+.radio-group label:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: #1a9668;
+  position: absolute;
+  left: 2px;
+  top: calc(50% - 5px);
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked ~ .bullet {
+  position: absolute;
+  opacity: 1;
+  animation-name: explode;
+  animation-duration: 0.35s;
+}
+
+.line {
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: #24ae7c;
+  opacity: 0;
+}
+
+.line.zero {
+  left: 11px;
+  top: -21px;
+  transform: translateY(20px);
+  width: 2px;
+  height: 10px;
+}
+
+.line.one {
+  right: -7px;
+  top: -11px;
+  transform: rotate(-55deg) translate(-9px);
+}
+
+.line.two {
+  right: -20px;
+  top: 11px;
+  transform: translate(-9px);
+}
+
+.line.three {
+  right: -8px;
+  top: 35px;
+  transform: rotate(55deg) translate(-9px);
+}
+
+.line.four {
+  left: -8px;
+  top: -11px;
+  transform: rotate(55deg) translate(9px);
+}
+
+.line.five {
+  left: -20px;
+  top: 11px;
+  transform: translate(9px);
+}
+
+.line.six {
+  left: -8px;
+  top: 35px;
+  transform: rotate(-55deg) translate(9px);
+}
+
+.line.seven {
+  left: 11px;
+  bottom: -21px;
+  transform: translateY(-20px);
+  width: 2px;
+  height: 10px;
+}
+
+input[type="radio"]:checked ~ .bullet .line.zero {
+  animation-name: drop-zero;
+  animation-delay: 0.1s;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+input[type="radio"]:checked ~ .bullet .line.one {
+  animation-name: drop-one;
+  animation-delay: 0.1s;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+input[type="radio"]:checked ~ .bullet .line.two {
+  animation-name: drop-two;
+  animation-delay: 0.1s;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+input[type="radio"]:checked ~ .bullet .line.three {
+  animation-name: drop-three;
+  animation-delay: 0.1s;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+input[type="radio"]:checked ~ .bullet .line.four {
+  animation-name: drop-four;
+  animation-delay: 0.1s;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+input[type="radio"]:checked ~ .bullet .line.five {
+  animation-name: drop-five;
+  animation-delay: 0.1s;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+input[type="radio"]:checked ~ .bullet .line.six {
+  animation-name: drop-six;
+  animation-delay: 0.1s;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+input[type="radio"]:checked ~ .bullet .line.seven {
+  animation-name: drop-seven;
+  animation-delay: 0.1s;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes explode {
+  0% {
+    opacity: 0;
+    transform: scale(10);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drop-zero {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    height: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-2px);
+    height: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes drop-one {
+  0% {
+    opacity: 0;
+    transform: rotate(-55deg) translate(-20px);
+    width: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-55deg) translate(9px);
+    width: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes drop-two {
+  0% {
+    opacity: 0;
+    transform: translate(-20px);
+    width: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(9px);
+    width: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes drop-three {
+  0% {
+    opacity: 0;
+    transform: rotate(55deg) translate(-20px);
+    width: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(55deg) translate(9px);
+    width: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes drop-four {
+  0% {
+    opacity: 0;
+    transform: rotate(55deg) translate(20px);
+    width: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(55deg) translate(-9px);
+    width: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes drop-five {
+  0% {
+    opacity: 0;
+    transform: translate(20px);
+    width: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-9px);
+    width: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes drop-six {
+  0% {
+    opacity: 0;
+    transform: rotate(-55deg) translate(20px);
+    width: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-55deg) translate(-9px);
+    width: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes drop-seven {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+    height: 10px;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(2px);
+    height: 0px;
+    opacity: 0;
+  }
+}
+
+button {
+  z-index: 0;
+}
+
+button::after {
+  transition: transform 0.35s linear, opacity 0.3s linear;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a9668;
+  transform: translateX(-100%);
+  z-index: -1;
+}
+
+button:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.checkbox {
+  position: relative;
+}
+.checkbox input,
+.checkbox svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+.checkbox input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: box-shadow 0.3s;
+  box-shadow: inset 0 0 0 var(--s, 1px) var(--b, #363a3d);
+}
+.checkbox input:hover {
+  --s: 2px;
+  --b: #1a9668;
+}
+.checkbox input:checked {
+  --b: #0f5e41;
+  background: #24ae7c;
+}
+.checkbox svg {
+  pointer-events: none;
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #fff;
+  position: absolute;
+  top: 0;
+  width: 21px;
+  height: 21px;
+}
+.checkbox.path input:checked {
+  --s: 2px;
+  transition-delay: 0.4s;
+}
+.checkbox.path input:checked + svg {
+  --a: 16.1 86.12;
+  --o: 102.22;
+}
+.checkbox.path svg {
+  stroke-dasharray: var(--a, 86.12);
+  stroke-dashoffset: var(--o, 86.12);
+  transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s;
+}
+
+select {
+  background-image: url("../assets/icons/chevron-down.svg");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px) center;
+  appearance: none;
+}
+
+.dropzone {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23363A3D' stroke-width='3' stroke-dasharray='10%2c 14' stroke-dashoffset='7' stroke-linecap='round'/%3e%3c/svg%3e");
+  border-radius: 8px;
+  transition: background-image 0.3s ease;
+}
+
+.dropzone:has(input:is(:focus, :hover)) {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%2324ae7c' stroke-width='3' stroke-dasharray='10%2c 14' stroke-dashoffset='7' stroke-linecap='round'/%3e%3c/svg%3e");
+}
