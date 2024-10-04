@@ -52,6 +52,7 @@ function renderInputField(array $params)
   }
 }
 
+
 /*-----------------------------------------------------------------------*/
 
 function renderStandardInput(array $params)
@@ -189,7 +190,7 @@ function renderButton($label, $name)
 
 function renderTextError($error)
 {
-  return $error ? '<small class="text-small text-red-400">' . htmlspecialchars($error) . '</small>' : '';
+  return $error ? '<small class="text-xs text-red-400">' . htmlspecialchars($error) . '</small>' : '';
 }
 
 /*-----------------------------------------------------------------------*/

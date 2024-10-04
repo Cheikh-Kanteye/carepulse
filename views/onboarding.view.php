@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-4">
   <div>
     <h1 class="text-2xl sm:text-4xl font-bold mb-1">Hi there...</h1>
-    <p class="text-base sm:text-lg">Get Started with Appointments.</p>
+    <p class="text-base">Get Started with Appointments.</p>
   </div>
 
   <form class="flex flex-col gap-6" method="POST">
