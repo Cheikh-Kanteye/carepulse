@@ -24,6 +24,16 @@
       ]) ?>
       <?= renderTextError($errors['fullname'] ?? '') ?>
     </div>
+    <div class="w-full">
+      <?= renderInputField([
+        'label' => 'Fullname',
+        'id' => 'fullname',
+        'type' => 'text',
+        'icon' => '/user.svg',
+        'placeholder' => 'Enter your fullname'
+      ]) ?>
+      <?= renderTextError($errors['fullname'] ?? '') ?>
+    </div>
   </form>
 
   <a href="/success">Next</a>
