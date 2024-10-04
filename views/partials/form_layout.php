@@ -3,8 +3,8 @@
 
 
 <main class="flex h-screen">
-  <div class="flex-1 px-4 sm:px-8 max-w-screen-md mx-auto py-8">
-    <img src="<?= resolveAssetUrl("/logo-full.svg") ?>" alt="logo" class="mb-20" />
+  <div class="flex-1 px-4 sm:px-8 max-w-screen-md mx-auto py-6">
+    <img src="<?= resolveAssetUrl("/logo-full.svg") ?>" alt="logo" class="mb-16" />
     <?php require($formView); ?>
   </div>
 
