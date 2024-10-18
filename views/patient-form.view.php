@@ -108,16 +108,13 @@
       </div>
     </div>
 
+
     <h2 class="text-xl sm:text-3xl font-bold mt-2">Medical Information</h2>
     <div class="w-full">
       <?= renderSelectField([
         'label' => 'Primary care physician',
         'id' => 'primary_physician',
-        'options' => [
-          'dr_smith' => 'Dr. Smith',
-          'dr_jones' => 'Dr. Jones',
-          'dr_brown' => 'Dr. Brown',
-        ]
+        'options' => $primary_care_physician
       ]) ?>
       <?= renderTextError($errors['primary_physician'] ?? '') ?>
     </div>
