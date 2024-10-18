@@ -212,17 +212,17 @@
 
     <h2 class="text-xl sm:text-3xl font-bold mt-2">Consent and Privacy</h2>
     <div class="w-full">
-      <?= renderCheckbox('consent_treatment', 'I consent to receive treatment for my health condition.', $consent_treatment) ?>
+      <?= renderCheckbox('consent_treatment', 'I consent to receive treatment for my health condition.', $formData['consent_treatment']) ?>
       <?= renderTextError($errors['consent_treatment'] ?? '') ?>
     </div>
 
     <div class="w-full">
-      <?= renderCheckbox('consent_use_info', 'I consent to the use and disclosure of my health information for treatment purposes.', $consent_use_info) ?>
+      <?= renderCheckbox('consent_use_info', 'I consent to the use and disclosure of my health information for treatment purposes.', $formData['consent_use_info']) ?>
       <?= renderTextError($errors['consent_use_info'] ?? '') ?>
     </div>
 
     <div class="w-full">
-      <?= renderCheckbox('consent_privacy_policy', 'I acknowledge that I have reviewed and agree to the privacy policy.', $consent_privacy_policy) ?>
+      <?= renderCheckbox('consent_privacy_policy', 'I acknowledge that I have reviewed and agree to the privacy policy.', $formData['consent_privacy_policy']) ?>
       <?= renderTextError($errors['consent_privacy_policy'] ?? '') ?>
     </div>
 

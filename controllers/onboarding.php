@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Si aucune erreur, redirection
   if (empty($fullnameErr) && empty($emailErr) && empty($phoneErr)) {
-    header("Location: /patient-form");
+    header("Location: /patient-form?id=1");
     exit();
   }
 }
@@ -43,5 +43,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Chargement de la vue
 $formView = "views/onboarding.view.php";
 $bgUrl = "../public/assets/images/onboarding-img.png";
-$size = "50%";
+$size = "45%";
 require "views/partials/form_layout.php";
