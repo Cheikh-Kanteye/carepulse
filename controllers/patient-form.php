@@ -17,8 +17,8 @@ $formData = [
   'gender' => '',
   'address' => '',
   'occupation' => '',
-  'emergency_contact' => '',
   'emergency_phone' => '',
+  'emergency_contact' => '',
   'primary_physician' => '',
   'insurance_provider' => '',
   'insurance_policy' => '',
@@ -111,6 +111,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: /appointment");
     exit();
   }
+}
+
+require "db.php";
+
+$sql = "SELECT * FROM doctor";
+$result = $connexion->query($sql);
+$doctors = [];
+if ($result->num_rows > 0) {
+  // Affichage de chaque ligne de résultat
+  while ($row = $result->fetch_assoc()) {
+    $doctors[] = $row;
+  }
+}
+
+$primary_care_physician = [];
+
+foreach ($doctors as $value) {
+  $primary_care_physician[$value["idDoctor"]] = $value["fullname"];
 }
 
 // Passer les erreurs à la vue

@@ -221,13 +221,16 @@ function renderRadioButtonGroup($name, $options)
 function renderSelectField(array $params)
 {
   $optionsHtml = '';
-  foreach ($params['options'] as $value => $label) {
-    $optionsHtml .= sprintf(
-      '<option value="%s">%s</option>',
-      escapeHtml($value),
-      escapeHtml($label)
-    );
-  }
+
+  if (count($params["options"]) > 0) {
+    foreach ($params['options'] as $value => $label) {
+      $optionsHtml .= sprintf(
+        '<option value="%s">%s</option>',
+        escapeHtml($value),
+        escapeHtml($label)
+      );
+    }
+  } else $optionsHtml = "<option>no available doctors</option>";
 
   return sprintf(
     '<div class="relative flex flex-col gap-3 text-[#ABB8C4]">
